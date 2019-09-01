@@ -1,0 +1,48 @@
+<div class="container py-5">
+
+    <div class="row">
+        <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Random Rubbish Generator <i class="fas fa-key"></i></h5>
+                    <hr>
+
+                    <form method="POST" action="/">
+                        <div class="form-group form-row">
+                            <label for="length" class="col-md-4 col-form-label">
+                                Who's your target?
+                            </label>
+                            <div class="col-md-8">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="target" value="engineer"
+                                        id='engRadio' {{#if engineer}} checked {{/if}}>
+                                    <label class="form-check-label" for="engRadio">Engineer</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="target" value="designer"
+                                        id='desRadio' {{#if designer}} checked {{/if}}>
+                                    <label class="form-check-label" for="desRadio">Designer</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="target" value="entrepreneur"
+                                        id='entRadio' {{#if entrepreneur}} checked {{/if}}>
+                                    <label class="form-check-label" for="entRadio">Entrepreneur</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        {{#if rubbish}}
+                        <div class="alert alert-info" role="alert">
+                            <span class="mr-2">You could say:</span> <code>{{rubbish}}</code>
+                        </div>
+                        {{/if}}
+
+                        <button class="btn btn-success" type="submit">Generate Rubbish</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
